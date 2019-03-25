@@ -1,0 +1,8 @@
+/cms
+/vendor
+/node_modules
+/extensions
+
+wp-config.php
+
+.env
