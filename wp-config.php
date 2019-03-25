@@ -1,7 +1,11 @@
 <?php
 
+  require_once(__DIR__ . '/vendor/autoload.php');
+
   $dotenv = Dotenv\Dotenv::create(__DIR__);
   $dotenv->load();
+
+  $table_prefix  = getenv('DB_PREFIX');
 
   define('DB_NAME', getenv('DB_NAME'));
   define('DB_USER', getenv('DB_USER'));
@@ -13,12 +17,12 @@
 
   define( 'WPMDB_LICENCE', getenv('WPMDB_LICENSE') );
 
-  define( 'ENV_TYPE', getenv('ENV_TYPE') );
-  define( 'SCRIPT_DEBUG', getenv('SCRIPT_DEBUG') );
-  define( 'SAVEQUERIES', getenv('SAVEQUERIES') );
-  define( 'WP_DEBUG', getenv('WP_DEBUG') );
-  define( 'WP_DEBUG_LOG', getenv('WP_DEBUG_LOG') );
-  define( 'WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY') );
+  define('ENV_TYPE', getenv('ENV_TYPE') );
+  define('SCRIPT_DEBUG', getenv('SCRIPT_DEBUG') );
+  define('SAVEQUERIES', getenv('SAVEQUERIES') );
+  define('WP_DEBUG', getenv('WP_DEBUG') );
+  define('WP_DEBUG_LOG', getenv('WP_DEBUG_LOG') );
+  define('WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY') );
 
   define('WP_DEFAULT_THEME', getenv('WP_DEFAULT_THEME'));
 
@@ -31,13 +35,18 @@
   define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT') );
   define('NONCE_SALT', getenv('NONCE_SALT') );
 
-  define( 'WP_PLUGIN_DIR', dirname(__FILE__) . '/extensions' );
+  define('WP_HOME_DIR', dirname(__FILE__) );
+
+  define('WP_PLUGIN_DIR', dirname(__FILE__) . '/extensions' );
   define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/cms');
   define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '');
   define('WP_CONTENT_DIR', dirname(__FILE__) . '/media');
   define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/media');
 
-  register_theme_directory( dirname( __FILE__ ) . '/themes' );
+  define('WPMU_PLUGIN_DIR', dirname(__FILE__) . '/mu-extensions' );
+  define('WPMU_PLUGIN_URL', dirname(__FILE__) . '/mu-extensions' );
+
+  define( 'DISALLOW_FILE_EDIT', true );
 
   /** Absolute path to the WordPress directory. */
   if ( !defined('ABSPATH') )

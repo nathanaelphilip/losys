@@ -4,5 +4,5 @@
 /vendor
 /node_modules
 /extensions
-
+!/extensions/mu-plugins
 .env
