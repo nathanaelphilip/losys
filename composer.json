@@ -17,7 +17,7 @@
     "wpackagist-plugin/otf-regenerate-thumbnails": "^0.3",
     "deliciousbrains/wp-migrate-db-pro": "*",
     "deliciousbrains/wp-migrate-db-pro-media-files": "*",
-    "advanced-custom-fields/advanced-custom-fields-pro": "*"
+    "advanced-custom-fields/advanced-custom-fields-pro": "^5.7.13"
   },
   "repositories": [
     {
@@ -25,20 +25,8 @@
       "url": "https://wpackagist.org"
     },
     {
-      "type": "package",
-      "package": {
-        "name": "advanced-custom-fields/advanced-custom-fields-pro",
-        "version": "5.7.13",
-        "type": "wordpress-plugin",
-        "dist": {
-          "type": "zip",
-          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download"
-        },
-        "require": {
-          "philippbaschke/acf-pro-installer": "^1.0.2",
-          "composer/installers": "^1.6"
-        }
-      }
+      "type": "composer",
+      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v2/wordpress-plugin/"
     },
     {
       "type": "package",
