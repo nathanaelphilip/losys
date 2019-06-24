@@ -6,3 +6,4 @@
 /extensions
 !/extensions/mu-plugins
 .env
+debug.log

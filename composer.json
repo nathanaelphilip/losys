@@ -1,23 +1,26 @@
 {
-  "name": "voxmedia/voxmedia",
-  "description": "VOXMEDIA",
+  "name": "nathanaelphilip/restrt",
+  "description": "RESTRT",
   "type": "project",
   "authors": [
     {
       "name": "Nathanael Moody",
-      "email": "nathanael.moody@voxmedia.com"
+      "email": "hello@nathanaelphilip.com"
     }
   ],
   "require": {
     "composer/installers": "^1.6.0",
-    "vlucas/phpdotenv": "^3.3.3",
-    "johnpbloch/wordpress": "^5.1.0",
-    "wpackagist-plugin/classic-editor":"^1.3.0",
-    "wpackagist-plugin/cache-enabler": "^1.3.1",
-    "wpackagist-plugin/otf-regenerate-thumbnails": "^0.3",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "deliciousbrains/wp-migrate-db-pro": "*",
     "deliciousbrains/wp-migrate-db-pro-media-files": "*",
-    "advanced-custom-fields/advanced-custom-fields-pro": "^5.7.13"
+    "johnpbloch/wordpress": "^5.1.0",
+    "johnbillion/extended-cpts": "^4.2.4",
+    "wpackagist-plugin/otf-regenerate-thumbnails":"0.3",
+    "wpackagist-plugin/classic-editor":"^1.3.0",
+    "wpackagist-plugin/cache-enabler": "^1.3.1",
+    "wp-cli/wp-cli-bundle": "*",
+    "nathanaelphilip/losys-framework": "dev-master",
+    "timber/timber": "^1.10"
   },
   "repositories": [
     {
@@ -31,15 +34,32 @@
     {
       "type": "package",
       "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.8.1",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
+        },
+        "require": {
+          "composer/installers": "^1.6",
+          "ffraenz/private-composer-installer": "^2.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
         "name": "deliciousbrains/wp-migrate-db-pro",
         "type": "wordpress-plugin",
         "version": "1.9.5",
         "dist": {
           "type": "zip",
-          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-1.9.5.zip?licence_key=a3498d62-d1b1-4048-b634-c5d1e60fdfda&site_url=tressolutions.dev"
+          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-1.9.5.zip?licence_key={%WPMDB_LICENSE}&site_url=losys.local"
         },
         "require": {
-          "composer/installers": "^1.6"
+          "composer/installers": "^1.6",
+          "ffraenz/private-composer-installer": "^2.0"
         }
       }
     },
@@ -51,10 +71,11 @@
         "version": "1.4.13",
         "dist": {
           "type": "zip",
-          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-media-files-1.4.13.zip?licence_key=a3498d62-d1b1-4048-b634-c5d1e60fdfda&site_url=tressolutions.dev"
+          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-media-files-1.4.13.zip?licence_key={%WPMDB_LICENSE}&site_url=losys.local"
         },
         "require": {
-          "composer/installers": "^1.6"
+          "composer/installers": "^1.6",
+          "ffraenz/private-composer-installer": "^2.0"
         }
       }
     }

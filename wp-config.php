@@ -1,56 +1,86 @@
 <?php
 
+  declare(strict_types=1);
+
+  /*
+  |--------------------------------------------------------------------------
+  | Register The Composer Auto Loader
+  |--------------------------------------------------------------------------
+  |
+  | Composer provides a convenient, automatically generated class loader
+  | for our application. We just need to utilize it! We'll require it
+  | into the script here so that we do not have to worry about the
+  | loading of any our classes "manually".
+  |
+  */
+
   require_once(__DIR__ . '/vendor/autoload.php');
 
-  $dotenv = Dotenv\Dotenv::create(__DIR__);
-  $dotenv->load();
+
+  /*
+  |--------------------------------------------------------------------------
+  | Create The Application
+  |--------------------------------------------------------------------------
+  |
+  | The first thing we will do is create a new WordPlate application instance
+  | which serves as the "glue" for all the components of WordPlate, and is
+  | the container for the system binding all of the various parts.
+  |
+  */
+
+  $app = new LoSys\Application(
+    realpath(__DIR__)
+  );
+
+  /*
+  |--------------------------------------------------------------------------
+  | Custom WordPress Constants
+  |--------------------------------------------------------------------------
+  |
+  | Below you can add custom WordPress constants which aren't specified in
+  | application class. You may of course use the env() helper function.
+  |
+  */
+
+  // define('WP_ALLOW_MULTISITE', env('WP_ALLOW_MULTISITE', true));
+
+  /*
+  |--------------------------------------------------------------------------
+  | WordPress Database Table Prefix
+  |--------------------------------------------------------------------------
+  |
+  | You can have multiple installations in one database if you give each
+  | a unique prefix. Only numbers, letters, and underscores please!
+  |
+  */
 
   $table_prefix  = getenv('DB_PREFIX');
 
-  define('DB_NAME', getenv('DB_NAME'));
-  define('DB_USER', getenv('DB_USER'));
-  define('DB_PASSWORD', getenv('DB_PASSWORD'));
-  define('DB_HOST', getenv('DB_HOST'));
+  /*
+  |--------------------------------------------------------------------------
+  | Run The Application
+  |--------------------------------------------------------------------------
+  |
+  | Once we have the application, we can start the engine. This bootstraps
+  | the framework and gets it ready for use, then it will load up this
+  | application so that we can run it and send the responses back to the
+  | browser and delight our users.
+  |
+  */
 
-  define('DB_CHARSET', 'utf8');
-  define('DB_COLLATE', '');
+  $app->setPublicPath(dirname(__FILE__));
 
-  define( 'WPMDB_LICENCE', getenv('WPMDB_LICENSE') );
+  $app->run();
 
-  define('ENV_TYPE', getenv('ENV_TYPE') );
-  define('SCRIPT_DEBUG', getenv('SCRIPT_DEBUG') );
-  define('SAVEQUERIES', getenv('SAVEQUERIES') );
-  define('WP_DEBUG', getenv('WP_DEBUG') );
-  define('WP_DEBUG_LOG', getenv('WP_DEBUG_LOG') );
-  define('WP_DEBUG_DISPLAY', getenv('WP_DEBUG_DISPLAY') );
+  /*
+  |--------------------------------------------------------------------------
+  | Bootstrap WordPress Framework
+  |--------------------------------------------------------------------------
+  |
+  | The settings file is used to set up and fix common variables and include
+  | the WordPress procedural and class library. We also need to keep this
+  | include here in order to support WP-CLI.
+  |
+  */
 
-  define('WP_DEFAULT_THEME', getenv('WP_DEFAULT_THEME'));
-
-  define('AUTH_KEY', getenv('AUTH_KEY') );
-  define('SECURE_AUTH_KEY', getenv('SECURE_AUTH_KEY') );
-  define('LOGGED_IN_KEY', getenv('LOGGED_IN_KEY') );
-  define('NONCE_KEY', getenv('NONCE_KEY') );
-  define('AUTH_SALT', getenv('AUTH_SALT') );
-  define('SECURE_AUTH_SALT', getenv('SECURE_AUTH_SALT') );
-  define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT') );
-  define('NONCE_SALT', getenv('NONCE_SALT') );
-
-  define('WP_HOME_DIR', dirname(__FILE__) );
-
-  define('WP_PLUGIN_DIR', dirname(__FILE__) . '/extensions' );
-  define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/cms');
-  define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] . '');
-  define('WP_CONTENT_DIR', dirname(__FILE__) . '/media');
-  define('WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/media');
-
-  define('WPMU_PLUGIN_DIR', dirname(__FILE__) . '/mu-extensions' );
-  define('WPMU_PLUGIN_URL', dirname(__FILE__) . '/mu-extensions' );
-
-  define( 'DISALLOW_FILE_EDIT', true );
-
-  /** Absolute path to the WordPress directory. */
-  if ( !defined('ABSPATH') )
-  	define('ABSPATH', dirname(__FILE__) . '/');
-
-  /** Sets up WordPress vars and included files. */
   require_once(ABSPATH . 'wp-settings.php');
