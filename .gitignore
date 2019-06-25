@@ -7,3 +7,5 @@
 !/extensions/mu-plugins
 .env
 debug.log
+
+.DS_Store

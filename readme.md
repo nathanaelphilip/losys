@@ -1,4 +1,4 @@
-# New Voxmedia
+# LySos
 
 
 ## Requirements
