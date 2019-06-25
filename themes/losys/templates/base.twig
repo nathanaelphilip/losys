@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {{ function('wp_head') }}
+  </head>
+  <body class="{{ body_class }}" data-template="base.twig">
+    {% block content %}
+			Hello Worldz
+		{% endblock %}
+    {{ function('wp_footer') }}
+  </body>
+</html>
