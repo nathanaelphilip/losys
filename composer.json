@@ -51,10 +51,10 @@
       "package": {
         "name": "deliciousbrains/wp-migrate-db-pro",
         "type": "wordpress-plugin",
-        "version": "1.9.5",
+        "version": "1.9.8",
         "dist": {
           "type": "zip",
-          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-1.9.5.zip?licence_key={%WPMDB_LICENSE}&site_url=losys.local"
+          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-1.9.8.zip?licence_key={%WPMDB_LICENSE}&site_url=losys.local"
         },
         "require": {
           "composer/installers": "^1.6",
@@ -67,10 +67,10 @@
       "package": {
         "name": "deliciousbrains/wp-migrate-db-pro-media-files",
         "type": "wordpress-plugin",
-        "version": "1.4.13",
+        "version": "1.4.14",
         "dist": {
           "type": "zip",
-          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-media-files-1.4.13.zip?licence_key={%WPMDB_LICENSE}&site_url=losys.local"
+          "url": "https://deliciousbrains.com/dl/wp-migrate-db-pro-media-files-1.4.14.zip?licence_key={%WPMDB_LICENSE}&site_url=losys.local"
         },
         "require": {
           "composer/installers": "^1.6",
