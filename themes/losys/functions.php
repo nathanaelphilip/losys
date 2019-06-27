@@ -2,4 +2,4 @@
 
     use Timber\Timber;
 
-    Timber::$locations = get_template_directory() .'/templates';
+    Timber::$locations = get_template_directory() .'/views';
