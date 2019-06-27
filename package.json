@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "cross-env": "^5.2.0",
-    "laravel-mix": "^4.0.16"
+    "laravel-mix": "^4.0.16",
+    "normalize.scss": "^0.1.0",
+    "reset-css": "^4.0.1",
+    "sass-mq": "^5.0.0"
   }
 }
