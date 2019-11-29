@@ -89,5 +89,10 @@
     "installer-paths": {
       "extensions/{$name}/": ["type:wordpress-plugin"]
     }
+  },
+  "scripts": {
+    "pre-install-cmd": [
+      "test -f ~/config/losys/.env && ! test -f .env && cop ~/.config/losys/.env .env"
+    ]
   }
 }
