@@ -1,0 +1,40 @@
+@mixin cover {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@mixin flex ($align: center, $direction: row, $justify: space-between, $wrap: wrap) {
+  align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  justify-content: $justify;
+}
+
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@mixin ratio ($x, $y, $pseudo: false) {
+  $padding: unquote($y/$x * 100 + '%');
+
+  @if $pseudo {
+    &::before {
+      content: ' ';
+      padding-top: $padding;
+      position: relative;
+      width: 100%;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}

@@ -15,6 +15,10 @@ run.config:
       - zip
       - phar
       - intl
+      - dom
+      - exif
+      - fileinfo
+      - iconv
 
 data.db:
   image: nanobox/mysql:5.6

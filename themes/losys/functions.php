@@ -1,5 +1,5 @@
 <?php
 
-    use Timber\Timber;
+  use LoSys\Local;
 
-    Timber::$locations = get_template_directory() .'/views';
+  Local::boot();

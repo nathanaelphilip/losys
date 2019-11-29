@@ -8,6 +8,11 @@
       "email": "hello@nathanaelphilip.com"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "LoSys\\": "themes/losys/boot/"
+    }
+  },
   "require": {
     "composer/installers": "^1.6.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
