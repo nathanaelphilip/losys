@@ -92,7 +92,7 @@
   },
   "scripts": {
     "pre-install-cmd": [
-      "test -f ~/config/losys/.env && ! test -f .env && cp ~/.config/losys/.env .env"
+      "chmod +x scripts/env.sh && scripts/env.sh"
     ]
   }
 }
