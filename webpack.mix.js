@@ -15,7 +15,7 @@ const dist = `themes/losys/public`
 
 mix
   .js('resources/js/app.js', dist)
-  .sass('resources/sass/app.scss', dist);
+  .sass('resources/scss/app.scss', dist);
 
 // Full API
 // mix.js(src, output);
