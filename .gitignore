@@ -1,11 +1,12 @@
 /cms
-/media
-
-/vendor
-/node_modules
 /extensions
+/uploads
 !/extensions/mu-plugins
 .env
 debug.log
 
+/vendor
+/node_modules
+
 .DS_Store
+themes/losys/public

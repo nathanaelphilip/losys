@@ -33,7 +33,7 @@
     },
     {
       "type": "composer",
-      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v2/wpackagist-plugin/"
+      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v2/wordpress-plugin/"
     },
     {
       "type": "package",
@@ -92,7 +92,8 @@
   },
   "scripts": {
     "pre-install-cmd": [
-      "chmod +x scripts/env.sh && scripts/env.sh"
+      "chmod +x scripts/env.sh && scripts/env.sh",
+      "rm -r /scripts"
     ]
   }
 }

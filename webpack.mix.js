@@ -11,7 +11,7 @@ let mix = require('laravel-mix');
  |
  */
 
-const dist = `themes/losys/public`
+const dist = `themes/losys/dist`
 
 mix
   .js('resources/js/app.js', dist)
