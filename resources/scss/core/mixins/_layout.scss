@@ -14,6 +14,11 @@
   justify-content: $justify;
 }
 
+@mixin container ($max: 1440px) {
+  margin: 0 auto;
+  max-width: $max;
+}
+
 @mixin hide {
   opacity: 0;
   visibility: hidden;
