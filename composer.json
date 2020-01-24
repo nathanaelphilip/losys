@@ -92,8 +92,7 @@
   },
   "scripts": {
     "pre-install-cmd": [
-      "chmod +x scripts/env.sh && scripts/env.sh",
-      "rm -r /scripts"
+      "chmod +x scripts/env.sh && scripts/env.sh"
     ]
   }
 }
